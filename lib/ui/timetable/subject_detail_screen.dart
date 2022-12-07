@@ -2,62 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:student_management/models/subjects.dart';
 import 'package:student_management/models/timetable_details.dart';
 
-// class SubjectDetailScreen1 extends StatefulWidget {
-//   final Subject subject;
-//   // final TimeTableDetail timeTableDetail;
-//   const SubjectDetailScreen({Key? key,required this.subject}) : super(key: key);
-//
-//   @override
-//   State<SubjectDetailScreen> createState() => _SubjectDetailScreenState();
-// }
-//
-// class _SubjectDetailScreenState extends State<SubjectDetailScreen1> {
-//   @override
-//   void initState() {
-//     // TODO: implement initState
-//     super.initState();
-//   }
-//   ListView _buildListView(){
-//     return ListView.builder(
-//         itemBuilder: (context,index){
-//           var timetableDetail = widget.subject.timeTableDetails?[0];
-//           String week = timetableDetail?.week as String;
-//           String from = timetableDetail?.from as String;
-//           String timeDetail = timetableDetail?.timeDetail as String;
-//           return Container(
-//             child: Column(
-//               children: [
-//                 Text(week),
-//                 Text(from),
-//                 Text(timeDetail),
-//               ],
-//             ),
-//           );
-//         },
-//         itemCount: widget.subject.timeTableDetails?.length,
-//     );
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     List timeTableDetail = widget.subject.timeTableDetails as List;
-//     print(timeTableDetail);
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Chi tiết'),
-//         centerTitle: true,
-//       ),
-//       body: Container(
-//         alignment: Alignment.center,
-//         child: ListView(
-//           children: [
-//             Text(widget.subject.subjectName??""),
-//             _buildListView(),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+
 class SubjectDetailScreen extends StatelessWidget {
   final Subject subject;
 
@@ -75,11 +20,42 @@ class SubjectDetailScreen extends StatelessWidget {
         String? from = timetableDetail?.from as String;
         String? timeDetail = timetableDetail?.timeDetail as String;
         return Container(
+          height: 88,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0,1.5),
+                blurRadius: 3,
+                spreadRadius: 0.5,
+              ),
+            ],
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+            color: Colors.red,
+          ),
+          margin: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
           child: Column(
             children: [
-              Text('$week'),
-              Text(from),
-              Text(timeDetail),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('$week',style: TextStyle(fontWeight: FontWeight.bold),),
+                  // Text(lesson),
+                ],
+              ),
+              const SizedBox(height: 5,),
+              Row(
+                children: [
+                  Text(from),
+                ],
+              ),
+              const SizedBox(height: 5,),
+              Row(
+                children: [
+                  Text(timeDetail),
+                ],
+              ),
             ],
           ),
         );
@@ -97,10 +73,21 @@ class SubjectDetailScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
+        height: 500,
         alignment: Alignment.center,
         child: ListView(
           children: [
-            Text(subject.subjectName ?? ""),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(subject.subjectName ?? "",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              ],
+            ),
             _buildListView(),
           ],
         ),

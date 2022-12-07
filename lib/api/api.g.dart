@@ -21,11 +21,11 @@ class _Api implements Api {
   String? baseUrl;
 
   @override
-  Future<GeneralService<Map<String, dynamic>>> getAllUsers() async {
+  Future<GeneralService<Map<String, dynamic>>> login(body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
+    final _data = body;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<GeneralService<Map<String, dynamic>>>(Options(
       method: 'GET',
@@ -104,6 +104,56 @@ class _Api implements Api {
             .compose(
               _dio.options,
               '/subjects/time-table-detail/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = GeneralService2<Map<String, dynamic>>.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GeneralService<Map<String, dynamic>>> getAllStudentByIdSubject(
+      id) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GeneralService<Map<String, dynamic>>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/subjects/students/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = GeneralService<Map<String, dynamic>>.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<GeneralService2<Map<String, dynamic>>> getStudenDetail(
+    idSubject,
+    studentCode,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<GeneralService2<Map<String, dynamic>>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/subjects/students/{idSubjects}/${studentCode}',
               queryParameters: queryParameters,
               data: _data,
             )

@@ -12,7 +12,7 @@ abstract class Api{
 
 
   @GET("/users")
-  Future<GeneralService<Map<String,dynamic>>> getAllUsers();
+  Future<GeneralService<Map<String,dynamic>>> login(@Body() String body);
 
   @GET("subjects/time-table")
   Future<GeneralService2<Map<String,dynamic>>> getTimeTables();
@@ -22,6 +22,15 @@ abstract class Api{
 
   @GET("/subjects/time-table-detail/{idSubject}")
   Future<GeneralService2<Map<String,dynamic>>> getTimeTableDetail(@Path("idSubject")int id);
+
+  @GET("/subjects/students/{idSubject}")
+  Future<GeneralService<Map<String,dynamic>>> getAllStudentByIdSubject(@Path("idSubject")int id);
+
+  @GET("/subjects/students/{idSubjects}/{studentCode}")
+  Future<GeneralService2<Map<String,dynamic>>> getStudenDetail(@Path("idSubject") int idSubject,@Path("studentCode")String studentCode);
+
+  // @POST("/users")
+  // Future<GeneralService<Map<String,dynamic>>> login(@Body() String body);
 
   // @GET("subjects/time-table")
   // Future<GeneralService<Map<String,dynamic>>> getTimetableDetails();
