@@ -20,6 +20,9 @@ abstract class Api{
   @GET("/subjects")
   Future<GeneralService<Map<String,dynamic>>> getSubjects();
 
+  @GET("/subjects/time-table-detail/{idSubject}")
+  Future<GeneralService2<Map<String,dynamic>>> getTimeTableDetail(@Path("idSubject")int id);
+
   // @GET("subjects/time-table")
   // Future<GeneralService<Map<String,dynamic>>> getTimetableDetails();
   //

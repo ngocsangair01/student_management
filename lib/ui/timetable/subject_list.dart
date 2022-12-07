@@ -1,5 +1,7 @@
 
 
+import 'package:student_management/ui/timetable/subject_detail_screen.dart';
+
 import '../../ui/timetable/subject_provider.dart';
 import 'package:flutter/material.dart';
 class SubjectList extends StatelessWidget {
@@ -36,29 +38,34 @@ class SubjectList extends StatelessWidget {
             ),
             margin: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
             padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(subjectName,style: TextStyle(fontWeight: FontWeight.bold),),
-                    Text(lesson),
-                  ],
-                ),
-                const SizedBox(height: 5,),
-                Row(
-                  children: [
-                    Text(room),
-                  ],
-                ),
-                const SizedBox(height: 5,),
-                Row(
-                  children: [
-                    Text(address),
-                    Text(timeDetail),
-                  ],
-                )
-              ],
+            child: InkWell(
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(subjectName,style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text(lesson),
+                    ],
+                  ),
+                  const SizedBox(height: 5,),
+                  Row(
+                    children: [
+                      Text(room),
+                    ],
+                  ),
+                  const SizedBox(height: 5,),
+                  Row(
+                    children: [
+                      Text(address),
+                      Text(timeDetail),
+                    ],
+                  )
+                ],
+              ),
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SubjectDetailScreen(subject: subject)));
+              },
             ),
           );
         }

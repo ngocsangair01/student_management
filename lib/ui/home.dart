@@ -1,6 +1,8 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:student_management/ui/message/message_screen.dart';
 import 'package:student_management/ui/sectionclasses/sectionclassesscreen.dart';
+import 'package:student_management/ui/setting/setting_screen.dart';
 import 'package:student_management/ui/timetable/subject_screen.dart';
 
 class MyHomePagee extends StatefulWidget {
@@ -49,9 +51,9 @@ class _MyHomePageState extends State<MyHomePagee> {
   }
   void addHomePage() {
     _pageOptions.add(SectionScreen());
+    _pageOptions.add(MessageScreen());
     _pageOptions.add(SubjectScreen());
-    _pageOptions.add(SubjectScreen());
-    _pageOptions.add(SubjectScreen());
+    _pageOptions.add(SettingScreen());
     _pageOptions.add(SubjectScreen());
   }
 }
