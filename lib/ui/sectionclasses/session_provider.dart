@@ -27,7 +27,7 @@ class SessionProvider extends ChangeNotifier{
           data = null;
         }
         else{
-          data = List<SectionClass>.from((response.data as List) .map((e) => SectionClass.fromJson(e))).toList();
+          data = List<SectionClass>.from((response.data as List) .map((e) => SectionClass?.fromJson(e))).toList();
         }
         sectionClasses = data ?? sectionClasses;
       }

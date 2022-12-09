@@ -11,8 +11,8 @@ abstract class Api{
   factory Api(Dio dio) = _Api;
 
 
-  @GET("/users")
-  Future<GeneralService<Map<String,dynamic>>> login(@Body() String body);
+  @POST("/auth/login")
+  Future<GeneralService<Map<String,dynamic>>> login(@Body()String body);
 
   @GET("subjects/time-table")
   Future<GeneralService2<Map<String,dynamic>>> getTimeTables();
@@ -26,13 +26,7 @@ abstract class Api{
   @GET("/subjects/students/{idSubject}")
   Future<GeneralService<Map<String,dynamic>>> getAllStudentByIdSubject(@Path("idSubject")int id);
 
-  @GET("/subjects/students/{idSubjects}/{studentCode}")
-  Future<GeneralService2<Map<String,dynamic>>> getStudenDetail(@Path("idSubject") int idSubject,@Path("studentCode")String studentCode);
+  @GET("/subjects/students/{idSubject}/{studentCode}")
+  Future<GeneralService2<Map<String,dynamic>>> getStudentDetail(@Path("idSubject") int idSubject,@Path("studentCode")String studentCode);
 
-  // @POST("/users")
-  // Future<GeneralService<Map<String,dynamic>>> login(@Body() String body);
-
-  // @GET("subjects/time-table")
-  // Future<GeneralService<Map<String,dynamic>>> getTimetableDetails();
-  //
 }

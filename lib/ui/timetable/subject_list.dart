@@ -34,7 +34,9 @@ class SubjectList extends StatelessWidget {
                 ),
               ],
               borderRadius: BorderRadius.all(Radius.circular(15)),
-              color: Colors.red,
+              color: (index) % 2 == 0 ?
+              Color.fromRGBO(255, 196, 163, 1) :
+              Color.fromRGBO(255, 194, 190, 1),
             ),
             margin: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
             padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),

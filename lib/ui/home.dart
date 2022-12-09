@@ -4,6 +4,7 @@ import 'package:student_management/ui/message/message_screen.dart';
 import 'package:student_management/ui/sectionclasses/sectionclassesscreen.dart';
 import 'package:student_management/ui/setting/setting_screen.dart';
 import 'package:student_management/ui/timetable/subject_screen.dart';
+import 'package:student_management/ui/user_infor/user_infor_screen.dart';
 
 class MyHomePagee extends StatefulWidget {
   MyHomePagee({Key? key}) : super(key: key);
@@ -54,6 +55,6 @@ class _MyHomePageState extends State<MyHomePagee> {
     _pageOptions.add(MessageScreen());
     _pageOptions.add(SubjectScreen());
     _pageOptions.add(SettingScreen());
-    _pageOptions.add(SubjectScreen());
+    _pageOptions.add(UserInforScreen());
   }
 }

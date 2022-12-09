@@ -13,7 +13,7 @@ class _Api implements Api {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.16.106:8080/api/v1/';
+    baseUrl ??= 'http://192.168.1.4:8080/api/v1/';
   }
 
   final Dio _dio;
@@ -28,13 +28,13 @@ class _Api implements Api {
     final _data = body;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<GeneralService<Map<String, dynamic>>>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/users',
+              '/auth/login',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -137,7 +137,7 @@ class _Api implements Api {
   }
 
   @override
-  Future<GeneralService2<Map<String, dynamic>>> getStudenDetail(
+  Future<GeneralService2<Map<String, dynamic>>> getStudentDetail(
     idSubject,
     studentCode,
   ) async {
@@ -153,7 +153,7 @@ class _Api implements Api {
     )
             .compose(
               _dio.options,
-              '/subjects/students/{idSubjects}/${studentCode}',
+              '/subjects/students/${idSubject}/${studentCode}',
               queryParameters: queryParameters,
               data: _data,
             )

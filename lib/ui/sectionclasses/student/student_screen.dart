@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:student_management/ui/sectionclasses/student/detail/student_detail_provider.dart';
 import 'package:student_management/ui/sectionclasses/student/student_provider.dart';
 import 'package:student_management/ui/sectionclasses/student/students_list.dart';
 
@@ -26,7 +27,6 @@ class _BodyWidget extends StatefulWidget {
 
 class _BodyWidgetState extends State<_BodyWidget> {
   late StudentProvider _provider;
-
   @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
@@ -38,7 +38,7 @@ class _BodyWidgetState extends State<_BodyWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Students'),
+        title: Text('Infor Class'),
         centerTitle: false,
       ),
       body: _provider.loading
@@ -48,6 +48,25 @@ class _BodyWidgetState extends State<_BodyWidget> {
           : Container(
               child: Column(
                 children: [
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 35),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Student',
+                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                        Icon(Icons.calendar_month,size: 35,),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
                   StudentList(_provider),
                 ],
               ),

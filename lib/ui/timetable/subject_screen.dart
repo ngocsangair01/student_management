@@ -33,7 +33,7 @@ class _BodyWidgetState extends State<_BodyWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Subjects'),
-        centerTitle: true,
+        centerTitle: false,
       ),
       body: _provider.loading
           ? Center(

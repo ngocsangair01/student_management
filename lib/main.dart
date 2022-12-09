@@ -1,4 +1,5 @@
 import 'package:student_management/ui/home.dart';
+import 'package:student_management/ui/sign_in/sign_in_screen.dart';
 
 import './utils/colors.dart';
 import './utils/styles.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           backgroundColor: bgColor,
           primarySwatch: primaryMaterialColor,
@@ -45,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return FutureBuilder<Init>(
         future: init.setInit(context),
-        builder: (context,snapshot) => MyHomePagee(),
+        builder: (context,snapshot) => SignInScreen(),
     );
   }
 }
