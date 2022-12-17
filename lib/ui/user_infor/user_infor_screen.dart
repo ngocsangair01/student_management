@@ -14,6 +14,17 @@ class _UserInforScreenState extends State<UserInforScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Student Detail'),
+        actions: [
+          Container(
+            margin: EdgeInsets.only(right: 20),
+            child: Image(
+              image: AssetImage("assets/images/img.png"),
+              height: 40,
+              width: 40,
+            ),
+          ),
+        ],
+        backgroundColor: Colors.redAccent,
       ),
       body: Container(
         margin: EdgeInsets.only(left: 40, top: 40, right: 40),

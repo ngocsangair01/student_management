@@ -34,6 +34,17 @@ class _BodyWidgetState extends State<_BodyWidget> {
       appBar: AppBar(
         title: Text('Subjects'),
         centerTitle: false,
+        actions: [
+          Container(
+            margin: EdgeInsets.only(right: 20),
+            child: Image(
+              image: AssetImage("assets/images/img.png"),
+              height: 40,
+              width: 40,
+            ),
+          ),
+        ],
+        backgroundColor: Colors.redAccent,
       ),
       body: _provider.loading
           ? Center(

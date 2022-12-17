@@ -35,8 +35,16 @@ class _SectionClassesState extends State<_SectionClasses> {
         title: Text('List Of Section Classes'),
         centerTitle: false,
         actions: [
-          Icon(Icons.add),
+          Container(
+            margin: EdgeInsets.only(right: 20),
+            child: Image(
+              image: AssetImage("assets/images/img.png"),
+              height: 40,
+              width: 40,
+            ),
+          ),
         ],
+        backgroundColor: Colors.redAccent,
       ),
       body: _provider.loading
           ? Center(

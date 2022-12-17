@@ -43,6 +43,17 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Student Detail'),
+        actions: [
+          Container(
+            margin: EdgeInsets.only(right: 20),
+            child: Image(
+              image: AssetImage("assets/images/img.png"),
+              height: 40,
+              width: 40,
+            ),
+          ),
+        ],
+        backgroundColor: Colors.redAccent,
       ),
       body: _studentDetailProvider.loading
           ? Center(child: CircularProgressIndicator())

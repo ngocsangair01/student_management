@@ -54,10 +54,15 @@ class _BodyWidgetState extends State<_BodyWidget> implements SignInDelegate {
         decoration: BoxDecoration(color: Colors.white),
         child: Column(
           children: <Widget>[
-            const SizedBox(height: 20,),
+            const SizedBox(height: 80,),
             const Expanded(
               flex: 20,
-                child: Icon(Icons.add)
+                child: Image(
+                    image: AssetImage("assets/images/img.png"),
+                  height: 130,
+                  width: 130,
+                  alignment: Alignment.center,
+                ),
             ),
             Text(
                 'SIGNIN',

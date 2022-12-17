@@ -9,7 +9,14 @@ class SettingScreen extends StatelessWidget {
         title: Text('Setting'),
         centerTitle: false,
         actions: [
-          Icon(Icons.add),
+          Container(
+            margin: EdgeInsets.only(right: 20),
+            child: Image(
+              image: AssetImage("assets/images/img.png"),
+              height: 40,
+              width: 40,
+            ),
+          ),
         ],
         backgroundColor: Colors.redAccent,
       ),
