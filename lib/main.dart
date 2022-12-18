@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return FutureBuilder<Init>(
         future: init.setInit(context),
-        builder: (context,snapshot) => MyHomePagee(),
+        builder: (context,snapshot) => SignInScreen(),
     );
   }
 }

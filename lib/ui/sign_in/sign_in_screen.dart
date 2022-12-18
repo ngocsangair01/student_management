@@ -59,8 +59,8 @@ class _BodyWidgetState extends State<_BodyWidget> implements SignInDelegate {
               flex: 20,
                 child: Image(
                     image: AssetImage("assets/images/img.png"),
-                  height: 130,
-                  width: 130,
+                  height: 100,
+                  width: 100,
                   alignment: Alignment.center,
                 ),
             ),
